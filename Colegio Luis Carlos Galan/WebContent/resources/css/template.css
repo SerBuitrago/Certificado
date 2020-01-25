@@ -1,0 +1,607 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Ubuntu !important;
+	box-sizing: border-box;
+}
+
+/***************************/
+/* Menu ********************/
+/***************************/
+.menu {
+	width: 100%;
+	height: auto;
+}
+
+.menu nav {
+	position: fixed;
+	background: #226AB9;
+	height: 80px;
+	width: 100%;
+	z-index: 1;
+	-webkit-transition: all 0.25s ease;
+	-moz-transition: all 0.25s ease;
+	-ms-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+}
+
+.menu label.logo {
+	color: white;
+	font-size: 35px;
+	line-height: 80px;
+	padding: 0 100px;
+	font-weight: bold;
+}
+
+.menu nav ul {
+	float: right;
+	margin-right: 20px;
+}
+
+.menu nav ul li {
+	display: inline-block;
+	line-height: 80px;
+	margin: 0 5px;
+}
+
+.menu nav ul li a {
+	color: white;
+	font-size: 17px;
+	padding: 10px 13px;
+	border-radius: 3px;
+	text-transform: uppercase;
+	text-decoration: none;
+	-webkit-transition: all 0.25s ease;
+	-moz-transition: all 0.25s ease;
+	-ms-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+}
+
+.menu a.active-menu, .menu a:hover {
+	background: #ffffbf;
+	transition: .5s;
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.menu .checkbtn {
+	font-size: 30px;
+	color: white;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+	display: none;
+}
+
+.menu #check {
+	display: none;
+}
+
+@media ( max-width : 960px) {
+	.menu label.logo {
+		font-size: 30px;
+		padding-left: 50px;
+	}
+	.menu nav ul li a {
+		font-size: 16px;
+	}
+}
+
+@media ( max-width : 858px) {
+	.menu .checkbtn {
+		display: block;
+	}
+	.menu ul {
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: #4C82C2;
+		top: 80px;
+		left: -100%;
+		text-align: center;
+		transition: all .5s;
+		padding-bottom: 50px;
+		z-index: 1 !important;
+	}
+	.menu nav ul li {
+		display: block;
+		margin: 30px 0;
+		line-height: 30px;
+	}
+	.menu nav ul li a {
+		font-size: 20px;
+	}
+	.menu a:hover, a.active-menu {
+		background: none;
+		color: #0082e6;
+	}
+	.menu #check:checked ~ ul {
+		left: 0;
+	}
+}
+
+@media ( max-width : 570px) {
+	.menu label.logo {
+		font-size: 20px;
+	}
+}
+
+@media ( max-width : 391px) {
+	.menu label.logo {
+		padding: 0 40px;
+	}
+	.menu .checkbtn {
+		font-size: 20px;
+	}
+}
+
+@media ( max-width : 214px) {
+	.menu nav ul li a {
+		font-size: 15px;
+	}
+	.menu label.logo {
+		font-size: 15px;
+	}
+	.menu label.logo {
+		padding: 0 20px;
+	}
+	.menu .checkbtn {
+		font-size: 14px;
+	}
+}
+
+/***************************/
+/* Cabecera ****************/
+/***************************/
+#cabecera {
+	width: 100%;
+	height: auto;
+	padding-bottom: 50px;
+	background: #226AB9;
+	overflow: hidden;
+	color: #fff;
+	text-align: center;
+	align-content: center;
+	margin-bottom: 60px;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+	position: fixed;
+	top: 80px;
+	z-index: 1;
+}
+
+#cabecera img {
+	margin-top: 15px;
+	margin-left: 100px;
+	float: left;
+	width: 200px;
+	height: 200px;
+}
+
+#cabecera #titulo {
+	float: left;
+	width: 70%;
+	margin: auto;
+	margin-top: 40px;
+	height: auto;
+}
+
+#cabecera #titulo h1 {
+	font-size: 45px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#cabecera #titulo h2 {
+	color: #ffffbf;
+	margin-top: 40px;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1140px) {
+	#cabecera img {
+		margin-left: 50px;
+	}
+}
+
+@media screen and (max-width: 952px) {
+	#cabecera img {
+		margin-left: 30px;
+		width: 150px;
+		height: 150px;
+	}
+	#cabecera #titulo {
+		margin-top: 20px;
+	}
+	#cabecera #titulo h1 {
+		font-size: 35px;
+	}
+	#cabecera #titulo h2 {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 669px) {
+	#cabecera img {
+		width: 120px;
+		height: 120px;
+	}
+	#cabecera #titulo {
+		margin-top: 20px;
+	}
+	#cabecera #titulo h1 {
+		font-size: 25px;
+	}
+	#cabecera #titulo h2 {
+		margin-top: 20px;
+		font-size: 10px;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	#cabecera img {
+		margin-left: 10px;
+	}
+	#cabecera #titulo h1 {
+		font-size: 20px;
+	}
+	#cabecera #titulo h2 {
+		margin-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#cabecera {
+		display: block;
+		overflow: none;
+	}
+	#cabecera img, #cabecera #titulo {
+		float: none;
+	}
+	#cabecera #titulo {
+		margin-top: 5px;
+	}
+	#cabecera #titulo {
+		width: 100%;
+	}
+	#cabecera #titulo h2 {
+		margin-top: 5px;
+		font-size: 5px;
+	}
+}
+
+/***************************/
+/* Seccion *****************/
+/***************************/
+#seccion {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding-top: 400px;
+}
+
+#ubicacion {
+	padding-top: 40px;
+	width: 100%;
+	height: 100vh;
+}
+
+#ubicacion iframe {
+	width: 100%;
+	height: 100%;
+}
+
+/***************************/
+/* Contacto ****************/
+/***************************/
+#contacto {
+	padding-top: 200px;
+	padding-bottom: 100px;
+}
+
+#contacto .contenedor-formulario-contacto {
+	width: 1050px;
+	height: auto;
+	margin: 50px auto;
+	display: flex;
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+#contacto .contenedor-formulario-contacto .informacion-contacto::before
+	{
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #4091EC;
+	opacity: 0.9;
+}
+
+#contacto .contenedor-formulario-contacto .informacion-contacto {
+	width: 38%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-image:
+		url('https://colgalancucuta.edu.co/web/wp-content/uploads/2019/07/62359941_806089363106935_3833363753127116800_n.jpg');
+	background-size: cover;
+	background-position: center center;
+	z-index: 0;
+	padding: 50px 0px;
+}
+
+#contacto .contenedor-formulario-contacto .informacion-contacto img {
+	width: 200px;
+	height: 200px;
+	display: block;
+	margin: auto;
+}
+
+.info_title, .items-contacto {
+	position: relative;
+	z-index: 2;
+	color: #fff;
+}
+
+.info_title {
+	margin-bottom: 30px;
+}
+
+.info_title span {
+	font-size: 100px;
+	display: block;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.info_title h2 {
+	font-size: 35px;
+	text-align: center;
+}
+
+.items-contacto p {
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.info_items p:nth-child(1) span {
+	font-size: 30px;
+	margin-right: 10px;
+}
+
+.info_items p:nth-child(2) span {
+	font-size: 50px;
+	margin-right: 15px;
+	margin-left: 4px;
+}
+
+/* Formulario de contacto*/
+form.formulario-contacto {
+	width: 62%;
+	padding: 30px 40px;
+}
+
+form.formulario-contacto h2 {
+	font-size: 25px;
+	font-weight: 600;
+	color: #303030;
+	margin-bottom: 30px;
+}
+
+form.formulario-contacto.informacion-usuario-contacto {
+	display: flex;
+	flex-direction: column;
+}
+
+form.formulario-contacto label {
+	font-weight: 600;
+}
+
+form.formulario-contacto input, form.formulario-contacto textarea {
+	width: 100%;
+	padding: 8px 0px 5px;
+	margin-bottom: 20px;
+	border: none;
+	border-bottom: 2px solid #D1D1D1;
+	font-family: 'Open sans';
+	color: #5A5A5A;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+form.formulario-contacto textarea {
+	max-width: 100%;
+	min-width: 100%;
+	max-height: 90px;
+}
+
+/* Ventana de errores*/
+.modal_wrap {
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mensaje_modal {
+	background: #fff;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+	width: 400px;
+	padding: 30px 20px 15px;
+}
+
+.mensaje_modal h3 {
+	text-align: center;
+	font-family: 'Ubuntu';
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.mensaje_modal h3:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #C5C5C5;
+	margin: 10px 0px 15px;
+}
+
+.mensaje_modal p {
+	font-size: 16px;
+	color: #606060;
+}
+
+.mensaje_modal p:before {
+	content: "\f00d";
+	font-family: FontAwesome;
+	display: inline-block;
+	color: #E25151;
+	margin-right: 8px;
+}
+
+#btnClose {
+	display: inline-block;
+	padding: 3px 10px;
+	margin-top: 10px;
+	background: #E25151;
+	color: #fff;
+	border: 2px solid #B14141;
+	cursor: pointer;
+	float: right;
+}
+
+@media screen and (max-width: 1075px) {
+	#contacto .contenedor-formulario-contacto {
+		width: 700px;
+	}
+}
+
+@media screen and (max-width: 723px) {
+	#contacto .contenedor-formulario-contacto {
+		width: 95%;
+		display: block;
+	}
+	#contacto .contenedor-formulario-contacto .informacion-contacto {
+		width: 100%;
+	}
+	#contacto form.formulario-contacto {
+		width: 80%;
+		margin: 20px auto;
+		height: auto;
+	}
+	#contacto form.formulario-contacto h2 {
+		width: 100%;
+		padding: 10px;
+		text-align: center;
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 570px) {
+	#contacto form.formulario-contacto {
+		width: 100%;
+	}
+	#contacto .contenedor-formulario-contacto .informacion-contacto img {
+		width: 150px;
+		height: 150px;
+	}
+}
+
+/***************************/
+/* Footer ******************/
+/***************************/
+.contenedor-footer {
+	width: 100%;
+	height: auto;
+	background-color: #226AB9;
+	padding: 10px 50px;
+}
+
+.contenedor-footer #footer-nombre {
+	width: 70%;
+	margin: auto;
+	height: auto;
+	text-align: center;
+	padding-top: 30px;
+}
+
+.contenedor-footer #footer-nombre h1 {
+	font-size: 45px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #fff;
+}
+
+.contenedor-footer #footer-img {
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+.contenedor-footer #footer-img img {
+	width: 250px;
+	height: 250px;
+}
+
+@media screen and (max-width: 997px) {
+	.contenedor-footer #footer-nombre h1 {
+		font-size: 35px;
+	}
+	.contenedor-footer #footer-nombre {
+		width: 95%;
+	}
+	.contenedor-footer #footer-img img {
+		width: 200px;
+		height: 200px;
+	}
+}
+
+@media screen and (max-width: 613px) {
+	.contenedor-footer #footer-nombre h1 {
+		font-size: 25px;
+	}
+	.contenedor-footer #footer-img {
+		justify-content: none;
+		flex-wrap: none;
+		display: block;
+	}
+	.contenedor-footer #footer-img img {
+		display: block;
+		margin: 20px auto;
+	}
+}
+
+@media screen and (max-width: 405px) {
+	.contenedor-footer #footer-nombre {
+		width: 100%;
+	}
+	.contenedor-footer #footer-img img {
+		width: 150px;
+		height: 150px;
+	}
+}

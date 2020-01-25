@@ -1,0 +1,240 @@
+/***************************/
+/* Consultar ***************/
+/***************************/
+#consultar {
+	width: 100%;
+	height: auto;
+	background-color: #DBD7D3;
+	padding: 60px 0px;
+}
+
+#consultar #buscador {
+	overflow: hidden;
+	width: 100%;
+	height: auto;
+	margin-bottom: 40px;
+	background-color: #323639;
+	border: 2px solid #fff;
+	border-left: 0px;
+	border-right: 0px;
+	-webkit-transition: all 0.5s ease !important;
+	-moz-transition: all 0.5s ease !important;
+	-ms-transition: all 0.5s ease !important;
+	-o-transition: all 0.5s ease !important;
+	transition: all 0.5s ease !important;
+}
+
+#consultar #buscador:hover {
+	border-color: #226AB9;
+	-webkit-box-shadow: 0px -2px 22px -3px #226AB9;
+	-moz-box-shadow: 0px -2px 22px -3px #226AB9;
+	box-shadow: 0px -2px 22px -3px #226AB9;
+}
+
+#consultar #buscador .button-generico {
+	float: right !important;
+	margin-right: 50px;
+	width: 150px;
+	margin-top: 30px;
+}
+
+#consultar #buscador #contenedor-bloque {
+	float: right !important;
+	width: 400px;
+	height: auto;
+	padding: 10px 0px;
+}
+
+#consultar #buscador #contenedor-bloque .selector-generico, #consultar #buscador #contenedor-bloque .input-generico
+	{
+	width: 300px;
+	margin-bottom: 10px !important;
+	display: block;
+	margin: auto;
+	overflow: hidden;
+}
+
+.informacion-estudiante .titulo-generico{
+	padding-bottom: 30px;
+}
+
+#animacion-informacion{
+	-webkit-transition: all 3s ease;
+	-moz-transition: all 3s ease;
+	-ms-transition: all 3s ease;
+	-o-transition: all 3s ease;
+	transition: all 3s ease;
+	
+}
+
+#consultar .informacion-estudiante, #consultar .certificado-estudiante {
+	width: 45%;
+	height: auto;
+	overflow: hidden;
+	padding: 40px 15px;
+	-webkit-box-shadow: 0px -2px 22px -3px #226AB9;
+	-moz-box-shadow: 0px -2px 22px -3px #226AB9;
+	box-shadow: 0px -2px 22px -3px #226AB9;
+	border-radius: 15px;
+}
+
+#consultar .space-between {
+	width: 90%;
+}
+
+#consultar .informacion-estudiante .titulo-generico, #consultar .certificado-estudiante .titulo-generico
+	{
+	font-size: 25px;
+}
+
+.informacion-estudiante .contenedor-arriba .contenedor-label label {
+	color: #226AB9;
+	font-weight: bold;
+	text-align: right;
+	text-transform: uppercase;
+	padding: 1px 0px !important;
+}
+
+.informacion-estudiante .contenedor-arriba .contenedor-resultado label {
+	color: black !important;
+	font-weight: normal !important;
+	text-transform: capitalize !important;
+	padding-left: 2px !important;
+	border-radius: 15px;
+	height: auto;
+}
+
+@media screen and (max-width: 1252px) {
+	#consultar .space-between {
+		display: block;
+		width: 100%;
+		justify-content: none;
+		flex-wrap: none;
+	}
+	#consultar .informacion-estudiante, #consultar .certificado-estudiante {
+		width: 80%;
+		margin: 15px auto;
+		margin-bottom: 30px;
+	}
+	#consultar .separador-informacion {
+		width: 700px;
+		height: auto;
+		margin: auto;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	#consultar .separador-informacion {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 954px) {
+	#consultar .informacion-estudiante, #consultar .certificado-estudiante {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	#consultar .separador-informacion {
+		width: 100%;
+	}
+	
+	#consultar .contenedor-error label, #consultar .contenedor-info label{
+	font-size: 15px;
+	}
+	.certificado-estudiante .contenedor-certificado-pdf{
+	padding: 0px;
+	}
+	
+	#consultar .contenedor-resultado label{
+	 font-size: 15px;
+	}
+	
+}
+
+@media screen and (max-width: 606px) {
+	#consultar #buscador {
+		overflow: none;
+	}
+	#consultar #buscador .button-generico {
+		float: none;
+		display: block;
+		margin: auto;
+		margin: 20px;
+	}
+	#consultar #buscador #contenedor-bloque {
+		float: none;
+		width: 100%;
+		margin: auto;
+		text-align: center;
+		align-items: center;
+	}
+	#consultar #buscador #contenedor-bloque .contenedor-one-radio {
+		width: 90%;
+		margin: auto;
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 392px) {
+	#consultar #buscador #contenedor-bloque .input-generico {
+		width: 95%;
+	}
+	#consultar .informacion-estudiante, #consultar .certificado-estudiante {
+		width: 90%;
+		margin: auto;
+	}
+}
+
+@media screen and (max-width: 294px) {
+	#consultar #buscador .button-generico {
+		width: 80%;
+		display: block;
+		float: none;
+		margin: 20px auto !important;
+	}
+	#consultar #buscador #contenedor-bloque .contenedor-one-radio table tbody
+		{
+		width: 90%;
+		margin: auto;
+		display: block;
+	}
+	#consultar #buscador #contenedor-bloque .contenedor-one-radio table td {
+		display: block;
+		margin: auto;
+		width: 80%;
+	}
+}
+/***************************/
+/* Consultar ***************/
+/***************************/
+.contenedor-grados-btn {
+	width: 80%;
+	margin: auto;
+	padding: 15px;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+.contenedor-grados-btn .button-generico {
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.certificado-estudiante .contenedor-certificado-pdf {
+	width: 100%;
+	height: 800px;
+	padding: auto 15px;
+}
+
+.certificado-estudiante .contenedor-certificado-pdf object {
+	width: 100%;
+	height: 100%;
+}
+
+.certificado-estudiante .contenedor-error, .certificado-estudiante .contenedor-info
+	{
+	width: 100%;
+	margin-bottom: 10px;
+}

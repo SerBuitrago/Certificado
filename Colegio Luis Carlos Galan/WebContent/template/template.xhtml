@@ -1,0 +1,117 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<meta charset="UTF-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	<title>#{index.colegio}</title>
+	<!--        -->
+	<!--        -->
+	<!--        -->
+	<!--  CSS   -->
+	<!--        -->
+	<!--        -->
+	<!--        -->
+	<h:outputStylesheet library="css" name="template.css" />
+	<h:outputStylesheet library="css" name="generico.css" />
+	<ui:insert name="css" />
+	<link href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu"
+		rel="stylesheet" />
+		
+</h:head>
+<h:body styleClass="body">
+	<!--       -->
+	<!--       -->
+	<!--       -->
+	<!--  MENU -->
+	<!--       -->
+	<!--       -->
+	<!--       -->
+	<div class="menu">
+		<nav> <input type="checkbox" id="check" /> <label for="check"
+			class="checkbtn"> <i class="fas fa-bars" />
+		</label> <label class="logo">Colegio</label>
+		<ul>
+			<li><a href="#consultar" class="active-menu enlace-menu-0">Certificado</a></li>
+			<li><a href="#ubicacion" class="enlace-menu-1">Ubicación</a></li>
+			<li><a href="#contacto" class="enlace-menu-2">Contactanos</a></li>
+		</ul>
+		</nav>
+	</div>
+	<!--        -->
+	<!--        -->
+	<!--        -->
+	<!-- HEADER -->
+	<!--        -->
+	<!--        -->
+	<!--        -->
+	<div id="cabecera" class="circulo">
+		<h:graphicImage library="img" name="escudo.png"
+			title="Escudo Luis Carlos Galan" />
+		<div id="titulo">
+			<h1>#{index.colegio}</h1>
+			<h2 title="Lema">#{index.lema}</h2>
+		</div>
+	</div>
+	<!--         -->
+	<!--         -->
+	<!--         -->
+	<!-- SECTION -->
+	<!--         -->
+	<!--         -->
+	<!--         -->
+	<div id="seccion">
+		<ui:insert name="consultar" />
+		<!--       -->
+		<!--       -->
+		<!--       -->
+		<!-- MAPS  -->
+		<!--       -->
+		<!--       -->
+		<!--       -->
+		<div id="ubicacion">
+			<h1 class="titulo-generico">Nuestra Ubicación</h1>
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d75191.96850977777!2d-72.52463490396674!3d7.916882520931999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66459691bdb4d1%3A0xdcb71f3a4679986!2sColegio%20Luis%20Carlos%20Gal%C3%A1n%20Sarmiento!5e0!3m2!1ses!2sco!4v1579702193063!5m2!1ses!2sco"
+				width="200px" height="200px" frameborder="0" style="border: 0;"></iframe>
+		</div>
+		<ui:insert name="contacto" />
+	</div>
+	
+
+	<!--            -->
+	<!--            -->
+	<!--            -->
+	<!--   FOOTER   -->
+	<!--            -->
+	<!--            -->
+	<!--            -->
+	<div class="contenedor-footer">
+		<div id="footer-nombre">
+			<h1>#{index.colegio}</h1>
+		</div>
+		<div id="footer-img" class="space-between">
+			<h:graphicImage library="img" name="escudo.png"
+				title="Escudo Luis Carlos Galan" />
+			<h:graphicImage library="img" name="bandera.jpg"
+				title="Bandera Luis Carlos Galan" />
+		</div>
+	</div>
+
+	<!--        -->
+	<!--        -->
+	<!--        -->
+	<!--   JS   -->
+	<!--        -->
+	<!--        -->
+	<!--        -->
+	<h:outputScript library="js" name="template.js" />
+	<ui:insert name="js" />
+</h:body>
+</html>

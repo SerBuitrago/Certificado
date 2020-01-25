@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	
+	<persistence-unit name="colegio">
+		<class>edu.jpa.entity.Acudiente</class>
+		<class>edu.jpa.entity.Asignatura</class>
+		<class>edu.jpa.entity.AsignaturaProfesor</class>
+		<class>edu.jpa.entity.Certificado</class>
+		<class>edu.jpa.entity.CertificadoEmbeddable</class>
+		<class>edu.jpa.entity.Estudiante</class>
+		<class>edu.jpa.entity.EstudianteEmbeddable</class>
+		<class>edu.jpa.entity.EstudianteGrado</class>
+		<class>edu.jpa.entity.EstudianteGradoEmbeddable</class>
+		<class>edu.jpa.entity.Grado</class>
+		<class>edu.jpa.entity.Nota</class>
+		<class>edu.jpa.entity.NotaEmbeddable</class>
+		<class>edu.jpa.entity.Profesor</class>
+		<class>edu.jpa.entity.Rector</class>
+		<class>edu.jpa.entity.Tecnica</class>
+		<class>edu.jpa.entity.Trabajador</class>
+
+		<properties>
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/colegio?zeroDateTimeBehavior=convertToNull" />
+
+			<property name="javax.persistence.jdbc.user" value="root" />
+
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MariaDB53Dialect" />
+
+			<!-- DB Dialect -->
+			<property name="hibernate.show_sql" value="true" />
+
+			<!-- Show SQL in console -->
+			<property name="hibernate.format_sql" value="true" />
+			<property
+				name="javax.persistence.schema-generation.database.action"
+				value="none" />
+		</properties>
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,250 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="template/template.xhtml">
+
+	<ui:define name="css">
+		<h:outputStylesheet library="css" name="certificado.css" />
+	</ui:define>
+
+	<!--            -->
+	<!--            -->
+	<!--            -->
+	<!-- CONSULTAR  -->
+	<!--            -->
+	<!--            -->
+	<!--            -->
+	<ui:define name="consultar">
+		<b:container id="consultar">
+			<h1 class="titulo-generico">Consultar</h1>
+			<div id="buscador">
+				<h:form>
+					<p:growl id="errorPel" sticky="true" showDetail="true" life="3000" />
+					<p:commandButton value="Buscar" action="#{index.consultar()}"
+						styleClass="button-generico" update="consultar" />
+
+					<div id="contenedor-bloque">
+						<p:inputText placeholder="Ingrese Documento"
+							value="#{index.documento}" styleClass="input-generico" />
+						<h:panelGrid columns="2" style="margin-bottom:10px"
+							cellpadding="5" styleClass="contenedor-one-radio">
+							<p:selectOneRadio id="tipoDocumento" value="#{index.tipo}"
+								unselectable="true">
+								<f:selectItem itemLabel="Cedula Ciudadania" itemValue="0" />
+								<f:selectItem itemLabel="Codigo Estudiante" itemValue="1" />
+								<f:selectItem itemLabel="Tarjeta Identidad" itemValue="2" />
+							</p:selectOneRadio>
+						</h:panelGrid>
+					</div>
+				</h:form>
+			</div>
+			<b:container id="animacion-informacion" class="space-between"
+				rendered="#{index.estudiante!=null}">
+				<div class="informacion-estudiante">
+					<h1 class="titulo-generico">Información Estudiante</h1>
+					<div class="separador-informacion">
+						<div class="contenedor-arriba">
+							<div class="contenedor-label">
+								<label class="label-generico"> Nombre: </label>
+							</div>
+							<div class="contenedor-resultado">
+								<label class="label-generico">
+									#{index.estudiante.getNombre()}
+									#{index.estudiante.getApellido()}</label>
+							</div>
+						</div>
+
+						<div class="contenedor-arriba">
+							<div class="contenedor-label">
+								<label class="label-generico"> Documento: </label>
+							</div>
+							<div class="contenedor-resultado">
+								<label class="label-generico">
+									#{index.estudiante.getTipo()} -
+									#{index.estudiante.getId().getDocumento()} </label>
+							</div>
+						</div>
+
+						<div class="contenedor-arriba">
+							<div class="contenedor-label">
+								<label class="label-generico"> Fecha Expedición: </label>
+							</div>
+							<div class="contenedor-resultado">
+								<label class="label-generico">
+									#{index.estudiante.getExpedicion()} </label>
+							</div>
+						</div>
+
+						<div class="contenedor-arriba">
+							<div class="contenedor-label">
+								<label class="label-generico"> Codigo: </label>
+							</div>
+							<div class="contenedor-resultado">
+								<label class="label-generico">
+									#{index.estudiante.getId().getCodigo()} </label>
+							</div>
+						</div>
+						<!--  -->
+						<div class="contenedor-arriba">
+							<div class="contenedor-label">
+								<label class="label-generico"> Nacimiento: </label>
+							</div>
+							<div class="contenedor-resultado">
+								<label class="label-generico">
+									#{index.estudiante.getNacimiento()}</label>
+							</div>
+						</div>
+						<!--  -->
+						<div class="contenedor-arriba">
+							<div class="contenedor-label">
+								<label class="label-generico"> Grado Cursados: </label>
+							</div>
+							<div class="contenedor-resultado">
+								<label class="label-generico"> #{index.gradosCursados()}
+								</label>
+							</div>
+						</div>
+
+						<div class="contenedor-arriba">
+							<div class="contenedor-label">
+								<label class="label-generico"> Fecha Ingreso: </label>
+							</div>
+							<div class="contenedor-resultado">
+								<label class="label-generico">
+									#{index.estudiante.getMatricula()} </label>
+							</div>
+						</div>
+						<!--  -->
+						<div class="contenedor-arriba">
+							<div class="contenedor-label">
+								<label class="label-generico"> Fecha Salida: </label>
+							</div>
+							<div class="contenedor-resultado">
+								<label class="label-generico">
+									#{index.estudiante.getSalida()} </label>
+							</div>
+						</div>
+
+						<div class="contenedor-arriba">
+							<div class="contenedor-label">
+								<label class="label-generico"> Email: </label>
+							</div>
+							<div class="contenedor-resultado">
+								<label class="label-generico">
+									#{index.estudiante.getEmail()}</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--              -->
+				<!--              -->
+				<!--              -->
+				<!-- CERTIFICADO  -->
+				<!--              -->
+				<!--              -->
+				<!--              -->
+
+				<b:container styleClass="certificado-estudiante">
+					<h1 class="titulo-generico">Certificado</h1>
+					<b:container styleClass="contenedor-info"
+						rendered="#{index.esVacioGrado()==true}">
+						<label>Info: El estudiante no tiene ningun certificado </label>
+					</b:container>
+					<b:container class="contenedor-grados-btn space-between"
+						rendered="#{index.esVacioGrado()==false}">
+						<h:form>
+							<ui:repeat var="btn" value="#{index.cursados}">
+								<p:commandButton value="#{btn.getGrado()}" update="consultar"
+									action="#{index.ejecutarArchivo(btn.getGrado())}"
+									styleClass="button-generico">
+								</p:commandButton>
+							</ui:repeat>
+						</h:form>
+					</b:container>
+					<b:container styleClass="contenedor-error"
+						rendered="#{index.esVacioCertificado()==true}">
+						<label>Error: certificado grado #{index.gradoCertificado}
+							no encontrado</label>
+					</b:container>
+					<b:container class="contenedor-certificado-pdf"
+						rendered="#{index.esVacioCertificado()==false}">
+						<p:media value="/report.pdf" player="pdf" width="100%"
+							height="500px" />
+					</b:container>
+				</b:container>
+			</b:container>
+		</b:container>
+	</ui:define>
+
+	<!--              -->
+	<!--              -->
+	<!--              -->
+	<!-- CONTACTO     -->
+	<!--              -->
+	<!--              -->
+	<!--              -->
+	<ui:define name="contacto">
+		<div id="contacto">
+			<h1 class="titulo-generico">Contacto</h1>
+			<div class="contenedor-formulario-contacto">
+
+				<div class="informacion-contacto">
+					<div class="info_title">
+						<h:graphicImage library="img" name="escudo.png"
+							title="Escudo Luis Carlos Galan" />
+						<h2>
+							INFORMACION<br />DE CONTACTO
+						</h2>
+					</div>
+					<div class="items-contacto">
+						<p>
+							<span class="fa fa-envelope"></span> colluisgalan@yahoo.es
+						</p>
+						<p>
+							<span class="fa fa-mobile"></span> (+57) 5 722963
+						</p>
+					</div>
+				</div>
+
+				<h:form styleClass="formulario-contacto">
+					<h2>Envia un mensaje</h2>
+					<p:growl id="errorContacto" sticky="true" showDetail="true"
+						life="3000" />
+					<div class="informacion-usuario-contacto">
+						<label for="names">Nombres *</label>
+						<p:inputText placeholder="Nombre Completo: "
+							value="#{contacto.nombre}" id="names" styleClass="input-generico"
+							required="true" requiredMessage="Digite Nombre" />
+
+						<label for="phone">Telefono / Celular</label>
+						<p:inputText placeholder="Telefono: " value="#{contacto.telefono}"
+							id="phone" styleClass="input-generico" required="true"
+							requiredMessage="Digite Telefono" />
+
+						<label for="email">Correo electronico *</label>
+						<p:inputText placeholder="Correo Electronico: "
+							value="#{contacto.email}" id="email" styleClass="input-generico"
+							required="true" requiredMessage="Digite Correo Electronico" />
+
+						<label for="mensaje">Mensaje *</label>
+						<p:inputTextarea placeholder="Mensaje: " value="#{contacto.email}"
+							id="mensaje" styleClass="input-generico" required="true"
+							requiredMessage="Digite el mensaje a enviar" />
+
+						<p:commandButton value="Enviar Mensaje" update="@form"
+							styleClass="button-generico" action="#" id="btnSend" />
+					</div>
+				</h:form>
+
+			</div>
+
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
